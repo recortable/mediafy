@@ -1,0 +1,19 @@
+
+en:
+  bucket:
+    index: "Listing all buckets"
+    show: "Show"
+    edit: "Edit"
+    destroy: "Destroy"
+    new: "Create new bucket"
+    media: "Attachment"
+    description: "Description"
+    extra: "Extra info"
+    owner_id: "Owner id"
+    owner_type: "Owner type"
+    actions: ""
+    submit:
+      create: "Create"
+      update: "Update"
+      cancel: "Cancel"
+    

@@ -1,0 +1,31 @@
+<h1><%= t('bucket.index') %></h1>
+
+<%= link_to t('bucket.new'), new_bucket_path %>
+
+<table>
+  <thead>
+    <tr>
+      <td><%= t('bucket.description') %> </td>
+      <td><%= t('bucket.extra') %> </td>
+      <td><%= t('bucket.owner_id') %> </td>
+      <td><%= t('bucket.owner_type') %> </td>
+      <td><%= t('bucket.actions') %> </td>
+    </tr>
+  </thead>
+  <tbody>
+
+  <% @buckets.each do |bucket| %>
+    <tr>
+      <td><%=h bucket.description %></td>
+      <td><%=h bucket.extra %></td>
+      <td><%= bucket.owner_id %></td>
+      <td><%= bucket.owner_type %></td>
+      <td>
+        <%= link_to t('bucket.show'), bucket %>
+        <%= link_to t('bucket.edit'), edit_bucket_path(bucket) %>
+        <%= link_to t('bucket.destroy'), bucket, :confirm => 'Are you sure?', :method => :delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+

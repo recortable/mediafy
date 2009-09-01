@@ -1,0 +1,28 @@
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.6.0
+*/
+html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}del,ins{text-decoration:none;}
+
+html {
+    font-size: 80%;
+    font-family: "Lucida Grande", Verdana, sans-serif;
+    background-color: #F67FFF;
+}
+
+.buckets {
+    width: 960px;
+    margin: 2em auto;
+    background-color: rgba(255,255,255,0.8);
+}
+
+h1 {display: block; background-color: rgba(0,0,0,0.1); padding: 0.5em 1em;
+        font-size: 150%; margin-bottom: 0.5em;}
+
+form {padding: 1em;}
+form label {display: block;}
+form input[type=file] {width: 10em;}
+form input[type=text] {border: 1px solid black; width: 30em;}
+form textarea {border: 1px solid black; width: 30em; height: 10em;}
