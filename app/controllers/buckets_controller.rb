@@ -23,7 +23,7 @@ class BucketsController < ApplicationController
     @bucket = Bucket.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :action => (params[:ui] == 'ajax' ? 'ajax_new' : 'new')}
       format.xml  { render :xml => @bucket }
     end
   end
@@ -37,9 +37,10 @@ class BucketsController < ApplicationController
 
     respond_to do |format|
       if @bucket.save
-        flash[:notice] = t('buckets.created')
+        flash[:notice] = t('bucket.flash.created')
         format.html { redirect_to buckets_path }
         format.xml  { render :xml => @bucket, :status => :created, :location => @bucket }
+        format.js { render :json => @bucket}
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @bucket.errors, :status => :unprocessable_entity }
@@ -47,14 +48,12 @@ class BucketsController < ApplicationController
     end
   end
 
-  # PUT /buckets/1
-  # PUT /buckets/1.xml
   def update
     @bucket = Bucket.find(params[:id])
 
     respond_to do |format|
       if @bucket.update_attributes(params[:bucket])
-        flash[:notice] = t('buckets.updated')
+        flash[:notice] = t('bucket.flash.updated')
         format.html { redirect_to buckets_path }
         format.xml  { head :ok }
       else
@@ -64,8 +63,6 @@ class BucketsController < ApplicationController
     end
   end
 
-  # DELETE /buckets/1
-  # DELETE /buckets/1.xml
   def destroy
     @bucket = Bucket.find(params[:id])
     @bucket.destroy

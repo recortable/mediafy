@@ -1,6 +1,7 @@
 <h1><%= t('bucket.index') %></h1>
 
-<%= link_to t('bucket.new'), new_bucket_path %>
+<%= link_to t('bucket.action.new'), new_bucket_path %>
+<%= link_to t('bucket.action.ajax_new'), new_bucket_path(:ui => 'ajax') %>
 
 <table>
   <thead>
@@ -31,9 +32,9 @@
       <td><%= bucket.media_file_size %></td>
       <td><%= bucket.media_updated_at %></td>
       <td>
-        <%= link_to t('bucket.show'), bucket %>
-        <%= link_to t('bucket.edit'), edit_bucket_path(bucket) %>
-        <%= link_to t('bucket.destroy'), bucket, :confirm => 'Are you sure?', :method => :delete %>
+        <%= link_to t('bucket.action.show'), bucket %>
+        <%= link_to t('bucket.action.edit'), edit_bucket_path(bucket) %>
+        <%= link_to t('bucket.action.destroy'), bucket, :confirm => 'Are you sure?', :method => :delete %>
       </td>
     </tr>
   <% end %>

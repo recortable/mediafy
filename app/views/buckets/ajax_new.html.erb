@@ -1,0 +1,27 @@
+<h1><%= t('bucket.ajax_new') %></h1>
+
+<a id="upload_link" href="#" onclick=""><%= t('bucket.action.ajax_upload') %></a>
+<span id="progress" style="display: none" >progress...</span>
+<div id="result"></div>
+
+<script type="text/javascript">
+  $(function() {
+    new AjaxUpload('#upload_link',
+    {action: '<%= buckets_path(:format => 'js') %>',
+      name: 'bucket[media]',
+      data: {authenticity_token : '<%= form_authenticity_token %>'},
+      onSubmit: function(file, extension) {
+        $("#upload_link").hide();
+        $("#progress").show();
+      },
+      onComplete: function(file, response) {
+        $("#progress").hide();
+        $("#result").html(response).show();
+      }
+
+    });
+  });
+</script>
+
+<br/>
+<%= link_to t('bucket.index'), buckets_path %>

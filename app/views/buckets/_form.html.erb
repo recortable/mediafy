@@ -6,7 +6,7 @@
 
   <p>
     <%= f.label :media, t('bucket.media') %>
-    <%= f.file_field :media unless @bucket.media %>
+    <%= f.file_field :media if @bucket.new_record? %>
     <%= @bucket.media_file_name if @bucket.media %>
   </p>
   <p>

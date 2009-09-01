@@ -2,13 +2,9 @@
 en:
   bucket:
     index: "Listing all buckets"
-    show: "Show"
-    edit: "Edit"
-    created: "Bucket successfully created."
-    update: "Edit bucket"
-    updated: "Bucket successfully updated"
-    destroy: "Destroy"
     new: "Create new bucket"
+    ajax_new: "Create a new bucket using AJAX form"
+    update: "Edit bucket"
     thumbnail: "Thumbnail"
     media: "Attachment"
     description: "Description"
@@ -19,7 +15,17 @@ en:
     media_updated_at: "Updated at"
     owner_id: "Owner id"
     owner_type: "Owner type"
+    flash:
+      updated: "Bucket successfully updated"
+      created: "Bucket successfully created."
     actions: ""
+    action:
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      new: "Create new bucket"
+      ajax_new: "Create new bucket with ajax"
+      ajax_upload: "Upload file"
     submit:
       create: "Create"
       update: "Update"
