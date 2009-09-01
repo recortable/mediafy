@@ -1,0 +1,33 @@
+<h1><%= t(@bucket.new_record? ? 'bucket.new' : 'bucket.update') %></h1>
+
+<% form_for(@bucket, :html => { :multipart => true } ) do |f| %>
+  <%= f.error_messages %>
+
+
+  <p>
+    <%= f.label :media, t('bucket.media') %>
+    <%= f.file_field :media unless @bucket.media %>
+    <%= @bucket.media_file_name if @bucket.media %>
+  </p>
+  <p>
+    <%= f.label :description, t('bucket.description') %>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :extra, t('bucket.extra') %>
+    <%= f.text_area :extra %>
+  </p>
+  <p>
+    <%= f.label :extra, t('bucket.owner_id') %>
+    <%= f.text_field :owner_id %>
+  </p>
+  <p>
+    <%= f.label :extra, t('bucket.owner_type') %>
+    <%= f.text_field :owner_type %>
+  </p>
+  <p>
+    <%= f.submit t(@bucket.new_record? ? 'bucket.submit.create': 'bucket.submit.update') %>
+    <%= link_to t('bucket.submit.cancel'), buckets_path %>
+  </p>
+<% end %>
+

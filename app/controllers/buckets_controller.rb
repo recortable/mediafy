@@ -38,7 +38,7 @@ class BucketsController < ApplicationController
     respond_to do |format|
       if @bucket.save
         flash[:notice] = t('buckets.created')
-        format.html { redirect_to(@bucket) }
+        format.html { redirect_to buckets_path }
         format.xml  { render :xml => @bucket, :status => :created, :location => @bucket }
       else
         format.html { render :action => "new" }
@@ -55,7 +55,7 @@ class BucketsController < ApplicationController
     respond_to do |format|
       if @bucket.update_attributes(params[:bucket])
         flash[:notice] = t('buckets.updated')
-        format.html { redirect_to(@bucket) }
+        format.html { redirect_to buckets_path }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

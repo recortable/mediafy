@@ -5,10 +5,15 @@
 <table>
   <thead>
     <tr>
+      <td><%= t('bucket.thumbnail') %> </td>
       <td><%= t('bucket.description') %> </td>
       <td><%= t('bucket.extra') %> </td>
       <td><%= t('bucket.owner_id') %> </td>
       <td><%= t('bucket.owner_type') %> </td>
+      <td><%= t('bucket.media_file_name') %> </td>
+      <td><%= t('bucket.media_content_type') %> </td>
+      <td><%= t('bucket.media_file_size') %> </td>
+      <td><%= t('bucket.media_updated_at') %> </td>
       <td><%= t('bucket.actions') %> </td>
     </tr>
   </thead>
@@ -16,10 +21,15 @@
 
   <% @buckets.each do |bucket| %>
     <tr>
+      <td><%= image_tag bucket.media.url(:small) if bucket.media %></td>
       <td><%=h bucket.description %></td>
       <td><%=h bucket.extra %></td>
       <td><%= bucket.owner_id %></td>
       <td><%= bucket.owner_type %></td>
+      <td><%= bucket.media_file_name %></td>
+      <td><%= bucket.media_content_type %></td>
+      <td><%= bucket.media_file_size %></td>
+      <td><%= bucket.media_updated_at %></td>
       <td>
         <%= link_to t('bucket.show'), bucket %>
         <%= link_to t('bucket.edit'), edit_bucket_path(bucket) %>
