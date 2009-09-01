@@ -1,5 +1,6 @@
-class BucketsController < ApplicationController
-  layout 'buckets'
+class BucketsController <  ApplicationController
+  unloadable
+  layout Buckets.layout
   
   def index
     @buckets = Bucket.all
@@ -37,10 +38,18 @@ class BucketsController < ApplicationController
 
     respond_to do |format|
       if @bucket.save
-        flash[:notice] = t('bucket.flash.created')
-        format.html { redirect_to buckets_path }
         format.xml  { render :xml => @bucket, :status => :created, :location => @bucket }
-        format.js { render :json => @bucket}
+        format.html do
+          flash[:notice] = t('bucket.flash.created')
+          redirect_to buckets_path
+        end
+        format.js do
+          if params[:response] == 'thumbnail'
+            render :text => @bucket.thumbnail
+          else
+            render :json => @bucket.to_json
+          end
+        end
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @bucket.errors, :status => :unprocessable_entity }
@@ -71,5 +80,9 @@ class BucketsController < ApplicationController
       format.html { redirect_to(buckets_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def destroy_all
+    render :text => 'a por ello!'
   end
 end

@@ -5,4 +5,12 @@ class Bucket < ActiveRecord::Base
 
 validates_attachment_presence :media
 
+  def thumbnail
+    self.media.url(:small)
+  end
+
+  def to_json
+    { :bucket_id => self.id, :thumbnail => self.thumbnail}.to_json
+  end
+
 end
