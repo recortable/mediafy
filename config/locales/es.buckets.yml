@@ -1,0 +1,33 @@
+
+es:
+  bucket:
+    index: "Todos los ficheros"
+    new: "Subir un fichero"
+    ajax_new: "Subir un fichero con AJAX"
+    update: "Editar fichero"
+    thumbnail: "Miniatura"
+    media: "Adjunto"
+    description: "Descripción"
+    extra: "Información extra"
+    media_file_name: "Nombre"
+    media_content_type: "Tipo"
+    media_file_size: "Tamaño"
+    media_updated_at: "Subido en"
+    owner_id: "Owner ID"
+    owner_type: "Owner type"
+    flash:
+      updated: "Archivo modificado"
+      created: "Archivo creado."
+    actions: ""
+    action:
+      show: "Ver"
+      edit: "Editar"
+      destroy: "Borrar"
+      new: "Subir fichero"
+      ajax_new: "Subir fichero con AJAX"
+      ajax_upload: "Subir fichero"
+    submit:
+      create: "Crear"
+      update: "Modificar"
+      cancel: "Cancelar"
+    
