@@ -17,6 +17,7 @@ class BucketsController <  ApplicationController
     respond_to do |format|
       format.html
       format.xml  { render :xml => @bucket }
+      format.js { render :json => @bucket.to_json}
     end
   end
 
